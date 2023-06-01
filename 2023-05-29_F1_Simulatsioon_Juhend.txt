@@ -1,0 +1,112 @@
+1. Kirjuta funktsioon, mis arvutab juhusliku aja etteantud vahemikus.
+Vahemik on sekundites ja kaasa arvatud. Lõpp tulemuses näitab lisaks 
+sekundile ja tuhandikke. Näiteks: Kui vahemik on 47 - 59 sekundit, 
+siis juhuslik aeg on 52.432 sekundit. Funktsioon PEAB tagastama aja.
+
+def funktsiooninimi(vahemik):
+	tegevus
+	return aeg
+
+print(funktsiooninimi(vahemik)) => 52.432
+
+2. Tee list viie eesnimega kes võistlevad. Genereeri igale ühele 
+kolm sektori aega vahemikus 23 kuni 26 k.a. Väljasta iga isiku järgi
+kolm aega
+
+Näiteks: 
+Lewis 25.12 25.286 25.935
+Valtteri 25.96 26.858 26.993
+
+3. Väljasta ajad ühel joonel. Nime max pikkus on 10 märki. Näiteks:
+Lewis      25.12 25.286 25.935
+Valtteri   25.96 26.858 26.993
+
+4. Kõige esimeseks tuleb kogu aeg ja siis s1, s2, s3.
+Lewis      72.778 23.746 24.639 24.393
+Valtteri   77.952 26.865 24.235 26.852
+
+5. Kogu aeg vormindada kujule 00:00:00.000 ehk 77.987 => 00:01:17.987
+Lewis      00:01:15.414 25.63 23.49 26.294
+Valtteri   00:01:12.485 24.59 24.028 23.867
+
+6. Selle asemel, et konsooli näidata kirjuta nimi ja kogu aeg 
+eraldi kahemõõtmelisse listi. Iga kirje sisaldab kahte asja. Nimi 
+ja aeg. Sorteeri list aja järgi kasvavalt ja näita tulemust 
+konsoolis. .append([nimi, aeg]) ja sorted() Näiteks:
+Valtteri   00:01:13.686 73.686
+Lewis      00:01:16.067 76.067
+
+7. Kirjuta funktsioon, mis arvutab täisringi aja kasutades esimeses
+punktis tehtud funktsiooni uue funktsiooni sees! Aegade vahemik 
+sektorites on sama mis alguses (23 ja 26). Sektori aegu sel korral 
+meeles pidama ei pea. Ainult täisringi aeg.
+
+8. Nüüd kui on peaaegu kogu vajalik info olemas tuleb teha 
+"võistlus". Võistlus on 10 ringi. Meeles tuleb pidada igal 
+ringil sõitja aega (ring) ja kogu aega (sõidetud ringide 
+aegade summa). Kogu info peab olema listis (nimi ja sõidetud 
+ringide aegade summa). Kui info olemas näita lõpus lõpp tulemust.
+Ära unusta listi sorteerida aja järgi kasvavalt.
+
+Valtteri   00:08:18.204
+Lewis      00:08:27.252
+
+9. Võistlusel on ikka nii, et kõik ringid ei tule hästi välja. Seega 
+mõnel ringil võiks juhtuda äpardus. See tähendaks, et sektori aeg 
+poleks enam 23 ja 26 sek. vahel vaid 30 ja 90 sek. vahel k.a. Enne
+ringi aja arvutamist tehke lihtne loogiline kontroll. Genereerige 
+juhuslik number vahemikus 1-10 või 0 - 9 ja kui see number on 2, 
+siis juhtus midagi ja arvutage sektori aeg nüüd vahemikus 30 - 90 
+k.a. 
+Lewis      00:09:11.433
+Valtteri   00:12:36.756
+
+10. Sõitja kõik "koperdamised" pane listi - ringi number. Ja kui 
+väljastatakse sõitja info, siis näita ringi numbreid kasutaja järgi.
+Valtteri   00:08:17.793
+Lewis      00:10:10.002 7 10 
+
+VÕI 
+
+Valtteri   00:08:17.793 []
+Lewis      00:10:10.002 [7, 10]
+
+11. Arvuta alates teisest sõitjast vahe esimesega. Aega näita 
+põhiaja järgi enne vigaseid ringide numbreid. Näiteks:
+
+George     00:08:19.978 []
+Lewis      00:08:29.160 00:00:09.182 []
+Max        00:09:04.019 00:00:44.041 [1]
+Marko      00:09:38.634 00:01:18.656 [3]
+Sergio     00:10:41.443 00:02:21.465 [4, 5, 8]
+
+30.05.2023 Eilse jätkamine
+
+12. Igal võidusõidul tuvastatakse ka kiirema ringi tegija (kolme 
+sektori summa). Teie ülesandeks on tuvastada kes on kiirema ringi 
+teinud. Aega näita isiku järgi peale "koperdatud" ringe.
+
+Valtteri   00:12:23.430 [] 00:01:10.037
+Lewis      00:14:51.852 00:02:28.422 [3] 
+
+13. Kiirema ringi teinud sõitja ei pruugi olla kõikides sektorites 
+kiirem. Ta ei pruugi üheski sektoris kiireim olla. Tuvastage 
+võistluse kolme sektrori kiiremad ajad ja sõitjad. Lisaks arvutage
+lõpus kokku kiirema ringi aeg sektorite baasil ehk "unistuste ring".
+
+Valtteri   00:12:24.200 [] 00:01:10.814
+Lewis      00:16:12.296 00:03:48.096 [3, 10] 
+
+Sectors best
+Sector 1 Nico       00:00:23.037
+Sector 2 Lewis      00:00:23.007
+Sector 3 Marko      00:00:23.068
+Dream lap time: 00:01:09.112
+
+14. Kogu võistluse info tuleb kirjutada txt (see on csv sisuga) 
+faili. Fail sisaldab allolevat infot ja fail peab sisaldama päist.
+Ajad on sekundites. Failinimi on Result.txt
+
+Ring;Nimi;Aeg:Sektor1;Sektor2;Sektor3;Viga
+1;Lewis;72.778;23.746;24.639;24.393;Jah
+2;Lewis;72.778;23.746;24.639;24.393;Ei
